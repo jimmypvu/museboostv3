@@ -8,9 +8,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Mona Sans", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        brand: ["Dancing Script", "cursive"]
+      },
       colors: {
-        'museboost-primary': '#6D28D9',
-        'museboost-secondary': '#4338CA',
+        'museboost-primary': '#FF4D8D',
+        'museboost-secondary': '#8C54FF',
         'museboost-accent': '#22D3EE'
       },
       animation: {

@@ -1,3 +1,6 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@200;400;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=mona-sans@200,400,500,600,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +8,11 @@
 @layer base {
     html {
         scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-body);
+        font-weight: 200;
     }
 }
 
@@ -28,7 +36,6 @@
       rgba(255, 77, 141, 0.15),
       rgba(140, 84, 255, 0.15)
     );
-    --body-font: "Mona Sans", sans-serif;
     --font-weight-body: 200;
     --font-weight-bold: 900;
 }
