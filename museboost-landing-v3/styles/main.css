@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+:root {
+    --font-body: "Mona Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, sans-serif;
+    --font-brand: "Dancing Script", cursive;
+    --primary-color: #ff4d8d;
+    --secondary-color: #8c54ff;
+    --dark-bg: #101010;
+    --darker-bg: #000000;
+    --off-white: #f4f1eb;
+    --cream-white: #f6eee2;
+    --gradient: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    --dark-gradient: linear-gradient(
+      135deg,
+      rgba(255, 77, 141, 0.15),
+      rgba(140, 84, 255, 0.15)
+    );
+    --body-font: "Mona Sans", sans-serif;
+    --font-weight-body: 200;
+    --font-weight-bold: 900;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.7s ease-out;
+}

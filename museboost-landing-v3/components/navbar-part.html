@@ -1,0 +1,70 @@
+<nav class="navbar fixed top-0 left-0 right-0 bg-white shadow-md z-50 px-4 md:px-6 lg:px-8">
+    <div class="nav-container max-w-7xl mx-auto flex justify-between items-center h-16">
+        <div class="nav-left flex items-center">
+            <div class="nav-brand text-xl font-semibold">
+                <a href="/" class="flex items-center space-x-2 text-gray-900 hover:text-gray-700 transition-colors">
+                    <span>Muse+</span>
+                    <span class="heart-icon inline-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="url(#heartGradient)" stroke="none" class="transition-transform hover:scale-110">
+                            <defs>
+                                <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#FF4D8D" />
+                                    <stop offset="100%" style="stop-color:#8C54FF" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-right flex items-center">
+            <!-- Desktop Navigation -->
+            <div class="nav-links hidden md:flex items-center space-x-6">
+                <a href="/services" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                <a href="/creators" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Creators</a>
+                <a href="/#reviews" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Results & Reviews</a>
+                <a href="/blog" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">Knowledge Base</a>
+                <a href="/#about" class="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+            </div>
+
+            <div class="nav-contact hidden md:block ml-6 pl-6 border-l border-gray-200">
+                <a href="/#contact" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-[#FF4D8D] to-[#8C54FF] hover:from-[#FF3D7D] hover:to-[#7C44FF] transition-all">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center ml-4">
+                <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#8C54FF]" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Hamburger icon -->
+                    <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Close icon -->
+                    <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="/services" class="block text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium transition-colors">Services</a>
+            <a href="/creators" class="block text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium transition-colors">Creators</a>
+            <a href="/#reviews" class="block text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium transition-colors">Results & Reviews</a>
+            <a href="/blog" class="block text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium transition-colors">Knowledge Base</a>
+            <a href="/#about" class="block text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium transition-colors">About</a>
+            <div class="mt-4 px-3">
+                <a href="/#contact" class="block w-full text-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-[#FF4D8D] to-[#8C54FF] hover:from-[#FF3D7D] hover:to-[#7C44FF] transition-all">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
