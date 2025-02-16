@@ -4,9 +4,9 @@
   "description": "MuseBoost V3: Next-generation AI creativity platform landing page",
   "main": "script.js",
   "scripts": {
-    "build": "tailwindcss -i ./styles/main.css -o ./dist/styles.css && vite build",
-    "watch": "tailwindcss -i ./styles/main.css -o ./dist/styles.css --watch",
-    "dev": "npx vite"
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "vite"
   },
   "keywords": ["ai", "creativity", "landing-page"],
   "author": "",
