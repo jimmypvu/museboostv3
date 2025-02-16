@@ -1,4 +1,4 @@
-@import '../styles/normalize.css';
-@import '../styles/main.css';
-
-/* Add any additional global styles here */
+/* Global styles */
+:root {
+  /* Your CSS variables here */
+}
