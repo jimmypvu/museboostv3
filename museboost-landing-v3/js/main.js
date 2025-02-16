@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Attach components
     await Promise.all([
         attachPart('body', '/components/navbar-part.html'),
-        attachPart('body', '/components/hero-part.html')
+        attachPart('body', '/components/hero-part.html'),
+        attachPart('body', '/components/carousel-part.html')
     ]);
     
     // Initialize mobile menu after navbar is attached
