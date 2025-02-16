@@ -1,48 +1,161 @@
-<section class="carousel-section bg-[var(--dark-bg)]">
-    <div class="carousel-container">
-        <button class="carousel-arrow prev" aria-label="Previous slide"></button>
-        <div class="carousel-slide">
-            <div class="image-grid">
-                <div class="image-item large">
-                    <img alt="Creator 1" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_dannielRiel27.jpg?updatedAt=1738540561963">
+<template id="carousel-template">
+    <section class="relative overflow-hidden py-16 md:py-24 bg-[var(--dark-bg)]">
+        <div class="flex flex-col items-center justify-between">
+            <div class="relative min-h-[600px] max-w-[1200px] w-full px-16 mb-8">
+                <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -left-6 shadow-lg" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                
+                <div class="carousel-slides relative w-full h-full">
+                    <!-- Slide 1 -->
+                    <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out active:opacity-100">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 1" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 2" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 3" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 4" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 5" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 6" src="https://placehold.co/400x400">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 7" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 8" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 9" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 10" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 11" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 12" src="https://placehold.co/400x400">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 13" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 14" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 15" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 16" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 17" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 18" src="https://placehold.co/400x400">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 19" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 20" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 21" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 22" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 23" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 24" src="https://placehold.co/400x400">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 25" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 26" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 27" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 28" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 29" src="https://placehold.co/400x400">
+                            </div>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer" data-modal-trigger>
+                                <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 30" src="https://placehold.co/400x400">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="image-item small">
-                    <img alt="Creator 2" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_catfish5.jpg?updatedAt=1738540560652">
-                </div>
-                <div class="image-item medium">
-                    <img alt="Creator 3" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_asianbaddie13.jpg?updatedAt=1738540559292">
-                </div>
-                <div class="image-item small">
-                    <img alt="Creator 4" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_glorilla30.jpg?updatedAt=1738540558006">
-                </div>
-                <div class="image-item medium">
-                    <img alt="Creator 5" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_ashleyVee18.jpg?updatedAt=1738540556724">
-                </div>
+
+                <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -right-6 shadow-lg" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="flex justify-center gap-3">
+                <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300 active" data-slide="0"></button>
+                <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300" data-slide="1"></button>
+                <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300" data-slide="2"></button>
+                <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300" data-slide="3"></button>
+                <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300" data-slide="4"></button>
             </div>
         </div>
-        <div class="carousel-slide" style="display: none;">
-            <div class="image-grid">
-                <div class="image-item small">
-                    <img alt="Creator 6" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_girlnextdoor35.jpg?updatedAt=1738540555261">
-                </div>
-                <div class="image-item medium">
-                    <img alt="Creator 7" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_ashleyVee19.jpg?updatedAt=1738540553866">
-                </div>
-                <div class="image-item large">
-                    <img alt="Creator 8" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_aiGenHentai17.jpg?updatedAt=1738540552449">
-                </div>
-                <div class="image-item small">
-                    <img alt="Creator 9" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_classyThot15.jpg?updatedAt=1738540550886">
-                </div>
-                <div class="image-item medium">
-                    <img alt="Creator 10" loading="lazy" src="https://ik.imagekit.io/museboostcreators/MuseBoost%20Headshots/OF_gothchick6.webp?updatedAt=1738540549129">
-                </div>
-            </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center" id="imageModal">
+        <div class="relative max-w-[90vw] max-h-[90vh]">
+            <button class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-300" id="closeModal">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-lg" id="modalImage">
         </div>
-        <button class="carousel-arrow next" aria-label="Next slide"></button>
     </div>
-    <div class="carousel-nav">
-        <button class="carousel-dot active"></button>
-        <button class="carousel-dot"></button>
-    </div>
-</section>
+</template>

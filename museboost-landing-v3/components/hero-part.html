@@ -1,24 +1,26 @@
-<header class="hero relative pt-20 pb-16 md:pt-28 md:pb-24 bg-[var(--darker-bg)] text-[var(--cream-white)]">
-    <div class="hero-content container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="italic text-4xl md:text-5xl lg:text-6xl mb-6 text-[var(--cream-white)]">
-            We are <span class="font-brand font-bold italic bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] bg-clip-text text-transparent">MuseBoost</span> Collective
-        </h1>
-        <p class="text-lg md:text-xl text-[var(--cream-white)] mb-8">
-            Empowering content creators to reach new heights<br>and maximize their earning potential
-        </p>
-        <div class="hero-buttons flex justify-center gap-6">
-            <button class="cta-button secondary px-7 py-3.5 text-base rounded-lg bg-white border border-[var(--primary-color)] text-[var(--darker-bg)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_10px_rgba(255,77,141,0.35),0_2px_6px_rgba(200,50,100,0.45)] hover:bg-[var(--off-white)] relative z-[1]">
-                Learn More 🤔
-            </button>
-            <button class="cta-button primary px-7 py-3.5 text-base rounded-lg bg-gradient-to-r from-[#FF4D8D] to-[#8C54FF] text-white border-0 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_10px_rgba(255,77,141,0.4),0_2px_6px_rgba(200,50,100,0.6)] relative z-[1]">
-                Get Started 🚀📈
-            </button>
+<template id="hero-template">
+    <header class="hero relative py-24 md:py-32 bg-[var(--darker-bg)] text-[var(--cream-white)]">
+        <div class="hero-content container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-between">
+            <h1 class="italic text-4xl md:text-5xl lg:text-6xl mb-6 text-[var(--cream-white)]">
+                We are <span class="font-brand font-bold italic bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] bg-clip-text text-transparent">MuseBoost</span> Collective
+            </h1>
+            <p class="text-lg md:text-xl text-[var(--cream-white)] mb-8">
+                Empowering content creators to reach new heights<br>and maximize their earning potential
+            </p>
+            <div class="hero-buttons flex justify-center gap-6">
+                <button class="cta-button secondary px-7 py-3.5 text-base rounded-md bg-white border border-[var(--primary-color)] text-[var(--darker-bg)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_10px_rgba(255,77,141,0.35),0_2px_6px_rgba(200,50,100,0.45)] hover:bg-[var(--off-white)] relative z-[1]">
+                    Learn More 🤔
+                </button>
+                <button class="cta-button primary px-7 py-3.5 text-base rounded-md bg-gradient-to-r from-[#FF4D8D] to-[#8C54FF] text-white border-0 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_10px_rgba(255,77,141,0.4),0_2px_6px_rgba(200,50,100,0.6)] relative z-[1]">
+                    Get Started 🚀📈
+                </button>
+            </div>
         </div>
-    </div>
-
-    <!-- Background decoration -->
-    <div class="absolute inset-0 -z-10 overflow-hidden">
-        <div class="absolute -top-1/2 -right-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-b from-[#FF4D8D20] to-transparent blur-3xl"></div>
-        <div class="absolute -bottom-1/2 -left-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-t from-[#8C54FF20] to-transparent blur-3xl"></div>
-    </div>
-</header>
+    
+        <!-- Background decoration -->
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+            <div class="absolute -top-1/2 -right-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-b from-[#FF4D8D20] to-transparent blur-3xl"></div>
+            <div class="absolute -bottom-1/2 -left-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-t from-[#8C54FF20] to-transparent blur-3xl"></div>
+        </div>
+    </header>
+</template>
