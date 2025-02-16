@@ -1,7 +1,9 @@
-// Register the custom elements first
+console.log('📦 Components main.js started loading');
+
 class NavbarPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ NavbarPart constructor called');
     }
 
     async loadContent() {
@@ -72,6 +74,7 @@ class NavbarPart extends HTMLElement {
 class HeroPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ HeroPart constructor called');
     }
 
     async loadContent() {
@@ -103,6 +106,7 @@ class HeroPart extends HTMLElement {
 class CarouselPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ CarouselPart constructor called');
         this.currentSlide = 0;
         this.autoRotateInterval = null;
         this.totalSlides = 0;
@@ -321,6 +325,7 @@ class CarouselPart extends HTMLElement {
 class WhyChooseUsPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ WhyChooseUsPart constructor called');
     }
 
     async loadContent() {
@@ -347,6 +352,7 @@ class WhyChooseUsPart extends HTMLElement {
 class ReviewsPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ ReviewsPart constructor called');
     }
 
     async loadContent() {
@@ -373,6 +379,7 @@ class ReviewsPart extends HTMLElement {
 class AboutPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ AboutPart constructor called');
     }
 
     async loadContent() {
@@ -399,6 +406,7 @@ class AboutPart extends HTMLElement {
 class ServicesPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ ServicesPart constructor called');
     }
 
     async loadContent() {
@@ -425,6 +433,7 @@ class ServicesPart extends HTMLElement {
 class FooterPart extends HTMLElement {
     constructor() {
         super();
+        console.log('🏗️ FooterPart constructor called');
     }
 
     async loadContent() {
@@ -448,12 +457,27 @@ class FooterPart extends HTMLElement {
     }
 }
 
-// Register all custom elements
-customElements.define('navbar-part', NavbarPart);
-customElements.define('hero-part', HeroPart);
-customElements.define('carousel-part', CarouselPart);
-customElements.define('whychooseus-part', WhyChooseUsPart);
-customElements.define('reviews-part', ReviewsPart);
-customElements.define('about-part', AboutPart);
-customElements.define('services-part', ServicesPart);
-customElements.define('footer-part', FooterPart);
+// Register custom elements
+console.log('🔧 Registering custom elements...');
+try {
+    customElements.define('navbar-part', NavbarPart);
+    console.log('✅ NavbarPart registered');
+    customElements.define('hero-part', HeroPart);
+    console.log('✅ HeroPart registered');
+    customElements.define('carousel-part', CarouselPart);
+    console.log('✅ CarouselPart registered');
+    customElements.define('whychooseus-part', WhyChooseUsPart);
+    console.log('✅ WhyChooseUsPart registered');
+    customElements.define('reviews-part', ReviewsPart);
+    console.log('✅ ReviewsPart registered');
+    customElements.define('about-part', AboutPart);
+    console.log('✅ AboutPart registered');
+    customElements.define('services-part', ServicesPart);
+    console.log('✅ ServicesPart registered');
+    customElements.define('footer-part', FooterPart);
+    console.log('✅ FooterPart registered');
+} catch (error) {
+    console.error('❌ Error registering components:', error);
+}
+
+console.log('🏁 Components main.js finished loading');
