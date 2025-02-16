@@ -1,33 +1,33 @@
 <template id="carousel-template">
     <section class="relative overflow-hidden py-16 md:py-24 bg-[var(--dark-bg)]">
         <div class="flex flex-col items-center justify-between">
-            <div class="relative min-h-[600px] max-w-[1200px] w-full px-16 mb-8">
-                <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -left-6 shadow-lg" aria-label="Previous slide">
+            <div class="relative min-h-[300px] md:min-h-[600px] max-w-[1200px] w-full px-4 md:px-16 mb-8">
+                <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -left-2 md:-left-6 shadow-lg" aria-label="Previous slide">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
                 
-                <div class="carousel-slides relative w-full h-full">
+                <div class="carousel-slides relative w-full h-full touch-pan-x">
                     <!-- Slide 1 -->
                     <div class="absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out">
-                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 md:gap-6 aspect-square md:aspect-[3/2] w-full max-w-[900px] mx-auto">
                             <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[100ms]" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 1" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 2" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 3" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 4" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 5" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 6" src="https://placehold.co/400x400">
                             </div>
                         </div>
@@ -35,23 +35,23 @@
 
                     <!-- Slide 2 -->
                     <div class="absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out">
-                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 md:gap-6 aspect-square md:aspect-[3/2] w-full max-w-[900px] mx-auto">
                             <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[100ms]" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 7" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 8" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 9" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 10" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 11" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 12" src="https://placehold.co/400x400">
                             </div>
                         </div>
@@ -59,23 +59,23 @@
 
                     <!-- Slide 3 -->
                     <div class="absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out">
-                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 md:gap-6 aspect-square md:aspect-[3/2] w-full max-w-[900px] mx-auto">
                             <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[100ms]" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 13" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 14" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 15" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 16" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 17" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 18" src="https://placehold.co/400x400">
                             </div>
                         </div>
@@ -83,23 +83,23 @@
 
                     <!-- Slide 4 -->
                     <div class="absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out">
-                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 md:gap-6 aspect-square md:aspect-[3/2] w-full max-w-[900px] mx-auto">
                             <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[100ms]" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 19" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 20" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 21" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 22" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 23" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 24" src="https://placehold.co/400x400">
                             </div>
                         </div>
@@ -107,37 +107,37 @@
 
                     <!-- Slide 5 -->
                     <div class="absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out">
-                        <div class="grid grid-cols-3 grid-rows-2 gap-6 aspect-[3/2] w-full max-w-[900px] mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-4 md:gap-6 aspect-square md:aspect-[3/2] w-full max-w-[900px] mx-auto">
                             <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[100ms]" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 25" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[200ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 26" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[300ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 27" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[400ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 28" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[500ms] hidden md:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 29" src="https://placehold.co/400x400">
                             </div>
-                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms]" data-modal-trigger>
+                            <div class="relative overflow-hidden rounded-xl cursor-pointer opacity-0 transform translate-y-4 transition-all duration-1000 ease-in-out delay-[600ms] hidden lg:block" data-modal-trigger>
                                 <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 30" src="https://placehold.co/400x400">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -right-6 shadow-lg" aria-label="Next slide">
+                <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -right-2 md:-right-6 shadow-lg" aria-label="Next slide">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                 </button>
             </div>
             
-            <div class="flex justify-center gap-3">
+            <div class="hidden md:flex justify-center gap-3">
                 <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300 active" data-slide="0"></button>
                 <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300" data-slide="1"></button>
                 <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/80 transition-colors duration-300" data-slide="2"></button>

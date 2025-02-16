@@ -1,5 +1,5 @@
 // Import styles
 import './style.css'
 
-// Import the main JS file directly
+// Import components
 import '../js/main.js'
