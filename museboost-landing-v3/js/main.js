@@ -499,6 +499,30 @@ class CarouselPart extends HTMLElement {
     }
 }
 
+class WhyChooseUsPart extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    async connectedCallback() {
+        try {
+            const response = await fetch('/components/whychooseus-part.html');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#whychooseus-template');
+            
+            if (template) {
+                this.appendChild(template.content.cloneNode(true));
+            } else {
+                console.error('Could not find whychooseus template');
+            }
+        } catch (error) {
+            console.error('Error loading whychooseus component:', error);
+        }
+    }
+}
+
 class ReviewsPart extends HTMLElement {
     constructor() {
         super();
@@ -523,11 +547,87 @@ class ReviewsPart extends HTMLElement {
     }
 }
 
+class AboutPart extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    async connectedCallback() {
+        try {
+            const response = await fetch('/components/about-part.html');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#about-template');
+            
+            if (template) {
+                this.appendChild(template.content.cloneNode(true));
+            } else {
+                console.error('Could not find about template');
+            }
+        } catch (error) {
+            console.error('Error loading about component:', error);
+        }
+    }
+}
+
+class FooterPart extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    async connectedCallback() {
+        try {
+            const response = await fetch('/components/footer-part.html');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#footer-template');
+            
+            if (template) {
+                this.appendChild(template.content.cloneNode(true));
+            } else {
+                console.error('Could not find footer template');
+            }
+        } catch (error) {
+            console.error('Error loading footer component:', error);
+        }
+    }
+}
+
+class ServicesPart extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    async connectedCallback() {
+        try {
+            const response = await fetch('/components/services-part.html');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#services-template');
+            
+            if (template) {
+                this.appendChild(template.content.cloneNode(true));
+            } else {
+                console.error('Could not find services template');
+            }
+        } catch (error) {
+            console.error('Error loading services component:', error);
+        }
+    }
+}
+
 // Register the custom elements
 customElements.define('navbar-part', NavbarPart);
 customElements.define('hero-part', HeroPart);
 customElements.define('carousel-part', CarouselPart);
+customElements.define('whychooseus-part', WhyChooseUsPart);
 customElements.define('reviews-part', ReviewsPart);
+customElements.define('about-part', AboutPart);
+customElements.define('footer-part', FooterPart);
+customElements.define('services-part', ServicesPart);
 
 // Initialize mobile menu
 function initMobileMenu() {

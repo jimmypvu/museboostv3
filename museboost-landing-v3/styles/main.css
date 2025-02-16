@@ -90,3 +90,7 @@
 .cta-button {
   font-weight: 400;
 }
+
+.cta-button:hover {
+  font-weight: 400;
+}
