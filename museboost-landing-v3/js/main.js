@@ -360,6 +360,32 @@ class AboutPart extends HTMLElement {
     }
 }
 
+class ServicesPart extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    async loadContent() {
+        try {
+            const response = await fetch('./components/services-part.html');
+            if (!response.ok) throw new Error('Failed to load services section');
+            const html = await response.text();
+            const template = document.createElement('template');
+            template.innerHTML = html;
+            const content = template.content.querySelector('#services-template');
+            if (content) {
+                this.appendChild(content.content.cloneNode(true));
+            }
+        } catch (error) {
+            console.error('Error loading services section:', error);
+        }
+    }
+
+    connectedCallback() {
+        this.loadContent();
+    }
+}
+
 class FooterPart extends HTMLElement {
     constructor() {
         super();
@@ -393,4 +419,5 @@ customElements.define('carousel-part', CarouselPart);
 customElements.define('whychooseus-part', WhyChooseUsPart);
 customElements.define('reviews-part', ReviewsPart);
 customElements.define('about-part', AboutPart);
+customElements.define('services-part', ServicesPart);
 customElements.define('footer-part', FooterPart);
