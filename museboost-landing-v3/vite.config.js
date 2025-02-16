@@ -12,16 +12,22 @@ export default defineConfig({
       },
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.')[1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'img';
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/img/[name][extname]`;
           }
-          return `assets/${extType}/[name][extname]`;
+          if (/css/i.test(ext)) {
+            return `styles/[name][extname]`;
+          }
+          return `assets/[name][extname]`;
         },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js',
       },
-    }
+    },
+    // Copy static assets to output
+    copyPublicDir: true
   },
   resolve: {
     alias: {
@@ -30,7 +36,10 @@ export default defineConfig({
       '@styles': resolve(__dirname, './styles')
     }
   },
+  // Ensure CSS files are processed correctly
   css: {
     postcss: './postcss.config.js'
-  }
+  },
+  // Configure static asset handling
+  publicDir: 'styles'
 })
