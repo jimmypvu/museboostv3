@@ -27,12 +27,18 @@ class NavbarPart extends HTMLElement {
     }
 
     initMobileMenu() {
-        const mobileMenuBtn = this.querySelector('[data-mobile-menu-btn]');
-        const mobileMenu = this.querySelector('[data-mobile-menu]');
+        const mobileMenuBtn = this.querySelector('#mobile-menu-button');
+        const mobileMenu = this.querySelector('#mobile-menu');
+        const hamburgerIcon = this.querySelector('#hamburger-icon');
+        const closeIcon = this.querySelector('#close-icon');
         
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
                 mobileMenu.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
             });
         }
     }
@@ -207,6 +213,38 @@ class CarouselPart extends HTMLElement {
     setupEventListeners() {
         // Previous button
         const prevButton = this.querySelector('button[aria-label="Previous slide"]');
+        const nextButton = this.querySelector('button[aria-label="Next slide"]');
+        const carousel = this.querySelector('.carousel-slides');
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        // Touch events for mobile swipe
+        if (carousel) {
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeDistance = touchEndX - touchStartX;
+                
+                // Minimum swipe distance threshold
+                if (Math.abs(swipeDistance) > 50) {
+                    this.stopAutoRotate();
+                    if (swipeDistance > 0) {
+                        // Swipe right - go to previous slide
+                        const newIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                        this.showSlide(newIndex);
+                    } else {
+                        // Swipe left - go to next slide
+                        const newIndex = (this.currentSlide + 1) % this.totalSlides;
+                        this.showSlide(newIndex);
+                    }
+                    this.startAutoRotate();
+                }
+            }, { passive: true });
+        }
+
         prevButton?.addEventListener('click', () => {
             this.stopAutoRotate();
             const newIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
@@ -214,8 +252,6 @@ class CarouselPart extends HTMLElement {
             this.startAutoRotate();
         });
 
-        // Next button
-        const nextButton = this.querySelector('button[aria-label="Next slide"]');
         nextButton?.addEventListener('click', () => {
             this.stopAutoRotate();
             const newIndex = (this.currentSlide + 1) % this.totalSlides;
