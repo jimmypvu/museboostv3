@@ -210,219 +210,150 @@ class CarouselPart extends HTMLElement {
             template.innerHTML = `
                 <link rel="stylesheet" href="/styles/normalize.css">
                 <link rel="stylesheet" href="/styles/main.css">
-                <section class="carousel-section bg-[var(--dark-bg)]">
-                    <div class="carousel-container max-w-[1400px] mx-auto px-8">
-                        <button class="carousel-arrow prev" aria-label="Previous slide"></button>
-                        
-                        <div class="carousel-slide active">
-                            <div class="image-grid">
-                                <div class="image-item large"><img alt="Creator 1" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 2" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 3" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 4" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 5" loading="lazy"></div>
-                                <div class="image-item large"><img alt="Creator 6" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 7" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 8" loading="lazy"></div>
-                            </div>
+                <section class="relative overflow-hidden py-8 bg-[var(--dark-bg)]">
+        <div class="relative min-h-[500px] max-w-[1200px] mx-auto px-16">
+            <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -left-6 shadow-lg" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            
+            <div class="carousel-slides relative w-full h-full">
+                <!-- Slide 1 -->
+                <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out active:opacity-100">
+                    <div class="grid grid-cols-3 grid-rows-2 gap-4 aspect-[3/2] w-full max-w-[1000px] mx-auto">
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 1" loading="lazy" src="https://placehold.co/400x400">
                         </div>
-
-                        <div class="carousel-slide">
-                            <div class="image-grid">
-                                <div class="image-item small"><img alt="Creator 9" loading="lazy"></div>
-                                <div class="image-item large"><img alt="Creator 10" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 11" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 12" loading="lazy"></div>
-                                <div class="image-item large"><img alt="Creator 13" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 14" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 15" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 16" loading="lazy"></div>
-                            </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 2" loading="lazy" src="https://placehold.co/400x400">
                         </div>
-
-                        <div class="carousel-slide">
-                            <div class="image-grid">
-                                <div class="image-item medium"><img alt="Creator 17" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 18" loading="lazy"></div>
-                                <div class="image-item large"><img alt="Creator 19" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 20" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 21" loading="lazy"></div>
-                                <div class="image-item large"><img alt="Creator 22" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 23" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 24" loading="lazy"></div>
-                            </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 3" loading="lazy" src="https://placehold.co/400x400">
                         </div>
-
-                        <div class="carousel-slide">
-                            <div class="image-grid">
-                                <div class="image-item large"><img alt="Creator 25" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 26" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 27" loading="lazy"></div>
-                                <div class="image-item large"><img alt="Creator 28" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 29" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 30" loading="lazy"></div>
-                                <div class="image-item medium"><img alt="Creator 31" loading="lazy"></div>
-                                <div class="image-item small"><img alt="Creator 32" loading="lazy"></div>
-                            </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 4" loading="lazy" src="https://placehold.co/400x400">
                         </div>
-
-                        <button class="carousel-arrow next" aria-label="Next slide"></button>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 5" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 6" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
                     </div>
-                    <div class="carousel-nav">
-                        <button class="carousel-dot active" data-slide="0"></button>
-                        <button class="carousel-dot" data-slide="1"></button>
-                        <button class="carousel-dot" data-slide="2"></button>
-                        <button class="carousel-dot" data-slide="3"></button>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                    <div class="grid grid-cols-3 grid-rows-2 gap-4 aspect-[3/2] w-full max-w-[1000px] mx-auto">
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 7" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 8" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 9" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 10" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 11" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 12" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
                     </div>
-                </section>
+                </div>
 
-                <style>
-                    .carousel-section {
-                        position: relative;
-                        overflow: hidden;
-                        padding: 2rem 0;
-                        background-color: #1a1a1a;
-                    }
+                <!-- Slide 3 -->
+                <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                    <div class="grid grid-cols-3 grid-rows-2 gap-4 aspect-[3/2] w-full max-w-[1000px] mx-auto">
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 13" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 14" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 15" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 16" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 17" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 18" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                    </div>
+                </div>
 
-                    .carousel-container {
-                        position: relative;
-                        min-height: 600px;
-                    }
+                <!-- Slide 4 -->
+                <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                    <div class="grid grid-cols-3 grid-rows-2 gap-4 aspect-[3/2] w-full max-w-[1000px] mx-auto">
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 19" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 20" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 21" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 22" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 23" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 24" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                    </div>
+                </div>
 
-                    .carousel-slide {
-                        position: absolute;
-                        width: 100%;
-                        opacity: 0;
-                        transition: opacity 0.5s ease-in-out;
-                    }
+                <!-- Slide 5 -->
+                <div class="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out">
+                    <div class="grid grid-cols-3 grid-rows-2 gap-4 aspect-[3/2] w-full max-w-[1000px] mx-auto">
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 25" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 26" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 27" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 28" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 29" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" alt="Creator 30" loading="lazy" src="https://placehold.co/400x400">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    .carousel-slide.active {
-                        opacity: 1;
-                    }
-
-                    .image-grid {
-                        display: grid;
-                        grid-template-columns: repeat(4, 1fr);
-                        gap: 1rem;
-                        max-width: 1400px;
-                        margin: 0 auto;
-                    }
-
-                    .image-item {
-                        position: relative;
-                        overflow: hidden;
-                        border-radius: 12px;
-                    }
-
-                    .image-item.large {
-                        grid-column: span 3;
-                        aspect-ratio: 3/4;
-                    }
-
-                    .image-item.medium {
-                        grid-column: span 2;
-                        aspect-ratio: 2/3;
-                    }
-
-                    .image-item.small {
-                        grid-column: span 1;
-                        aspect-ratio: 1;
-                    }
-
-                    .image-item img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        transition: transform 0.3s ease-in-out;
-                    }
-
-                    .image-item:hover img {
-                        transform: scale(1.05);
-                    }
-
-                    .carousel-arrow {
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        width: 48px;
-                        height: 48px;
-                        background-color: rgba(255, 255, 255, 0.9);
-                        border: none;
-                        border-radius: 50%;
-                        cursor: pointer;
-                        z-index: 10;
-                        transition: background-color 0.3s ease;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-
-                    .carousel-arrow:hover {
-                        background-color: rgba(255, 255, 255, 1);
-                    }
-
-                    .carousel-arrow.prev {
-                        left: 1rem;
-                    }
-
-                    .carousel-arrow.next {
-                        right: 1rem;
-                    }
-
-                    .carousel-arrow::before {
-                        content: '';
-                        width: 12px;
-                        height: 12px;
-                        border-style: solid;
-                        border-width: 2px 2px 0 0;
-                        display: inline-block;
-                    }
-
-                    .carousel-arrow.prev::before {
-                        transform: rotate(-135deg);
-                        margin-left: 4px;
-                    }
-
-                    .carousel-arrow.next::before {
-                        transform: rotate(45deg);
-                        margin-right: 4px;
-                    }
-
-                    .carousel-nav {
-                        position: absolute;
-                        bottom: 1rem;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        display: flex;
-                        gap: 0.5rem;
-                        z-index: 10;
-                    }
-
-                    .carousel-dot {
-                        width: 8px;
-                        height: 8px;
-                        border-radius: 50%;
-                        background-color: rgba(255, 255, 255, 0.5);
-                        cursor: pointer;
-                        transition: background-color 0.3s ease;
-                        border: none;
-                    }
-
-                    .carousel-dot.active {
-                        background-color: rgba(255, 255, 255, 1);
-                    }
-
-                    @media (max-width: 768px) {
-                        .image-grid {
-                            grid-template-columns: repeat(2, 1fr);
-                        }
-                        
-                        .carousel-arrow {
-                            width: 36px;
-                            height: 36px;
-                        }
-                    }
-                </style>
+            <button class="absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-black/90 hover:bg-black rounded-full cursor-pointer z-10 flex items-center justify-center transition-colors duration-300 -right-6 shadow-lg" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+        <div class="flex justify-center gap-2 mt-4">
+            <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300 active:bg-white" data-slide="0"></button>
+            <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300" data-slide="1"></button>
+            <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300" data-slide="2"></button>
+            <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300" data-slide="3"></button>
+            <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors duration-300" data-slide="4"></button>
+        </div>
+    </section>
             `;
             
             this.shadowRoot.appendChild(template.content.cloneNode(true));
@@ -441,18 +372,16 @@ class CarouselPart extends HTMLElement {
             const data = await response.json();
             console.log(`CarouselPart: Loaded image data: ${data.images.length} images`);
 
-            const slides = this.shadowRoot.querySelectorAll('.carousel-slide');
-            const imagesPerSlide = 8;
+            const slides = this.shadowRoot.querySelectorAll('.carousel-slides > div');
+            const imagesPerSlide = 6;
             let currentImageIndex = 0;
 
             slides.forEach((slide, slideIndex) => {
-                const imageGrid = slide.querySelector('.image-grid');
-                const imageItems = imageGrid.querySelectorAll('.image-item img');
-
-                imageItems.forEach((img) => {
+                const images = slide.querySelectorAll('img');
+                
+                images.forEach((img) => {
                     if (currentImageIndex < data.images.length) {
                         const imageData = data.images[currentImageIndex];
-                        console.log(`CarouselPart: Setting image ${currentImageIndex}: ${imageData.url}`);
                         img.src = imageData.url;
                         img.alt = imageData.alt;
                         currentImageIndex++;
@@ -470,9 +399,14 @@ class CarouselPart extends HTMLElement {
     }
 
     setupEventListeners() {
-        const prevButton = this.shadowRoot.querySelector('.carousel-arrow.prev');
-        const nextButton = this.shadowRoot.querySelector('.carousel-arrow.next');
-        const dots = this.shadowRoot.querySelectorAll('.carousel-dot');
+        const prevButton = this.shadowRoot.querySelector('button[aria-label="Previous slide"]');
+        const nextButton = this.shadowRoot.querySelector('button[aria-label="Next slide"]');
+        const dots = this.shadowRoot.querySelectorAll('button[data-slide]');
+
+        if (!prevButton || !nextButton) {
+            console.error('Navigation buttons not found');
+            return;
+        }
 
         prevButton.addEventListener('click', () => {
             console.log('CarouselPart: Prev button clicked');
@@ -490,6 +424,7 @@ class CarouselPart extends HTMLElement {
 
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
+                console.log(`CarouselPart: Dot ${index} clicked`);
                 this.stopAutoRotate();
                 this.showSlide(index);
                 this.startAutoRotate();
@@ -499,25 +434,29 @@ class CarouselPart extends HTMLElement {
 
     showSlide(index) {
         console.log(`CarouselPart: Showing slide ${index}`);
-        const slides = this.shadowRoot.querySelectorAll('.carousel-slide');
-        const dots = this.shadowRoot.querySelectorAll('.carousel-dot');
+        const slides = this.shadowRoot.querySelectorAll('.carousel-slides > div');
+        const dots = this.shadowRoot.querySelectorAll('button[data-slide]');
 
-        slides.forEach(slide => slide.classList.remove('active'));
+        slides.forEach(slide => {
+            slide.style.opacity = '0';
+            slide.style.pointerEvents = 'none';
+        });
         dots.forEach(dot => dot.classList.remove('active'));
 
-        slides[index].classList.add('active');
+        slides[index].style.opacity = '1';
+        slides[index].style.pointerEvents = 'auto';
         dots[index].classList.add('active');
         this.currentSlide = index;
     }
 
     showNextSlide() {
-        const slides = this.shadowRoot.querySelectorAll('.carousel-slide');
+        const slides = this.shadowRoot.querySelectorAll('.carousel-slides > div');
         const nextIndex = (this.currentSlide + 1) % slides.length;
         this.showSlide(nextIndex);
     }
 
     showPreviousSlide() {
-        const slides = this.shadowRoot.querySelectorAll('.carousel-slide');
+        const slides = this.shadowRoot.querySelectorAll('.carousel-slides > div');
         const prevIndex = (this.currentSlide - 1 + slides.length) % slides.length;
         this.showSlide(prevIndex);
     }
