@@ -571,6 +571,130 @@ class KbArticlePart extends HTMLElement {
     }
 }
 
+class KbArticle1Percent extends HTMLElement {
+    constructor() {
+        super();
+        console.log('🏗️ KbArticle1Percent constructor called');
+    }
+
+    async loadContent() {
+        try {
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/kb-article-1percent.html`);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#kb-article-template');
+            
+            if (template) {
+                const content = template.content.cloneNode(true);
+                this.appendChild(content);
+            } else {
+                console.error('Template not found in kb-article-1percent.html');
+            }
+        } catch (error) {
+            console.error('Error loading kb-article content:', error);
+        }
+    }
+
+    connectedCallback() {
+        this.loadContent();
+    }
+}
+
+class KbArticle5Tips extends HTMLElement {
+    constructor() {
+        super();
+        console.log('🏗️ KbArticle5Tips constructor called');
+    }
+
+    async loadContent() {
+        try {
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/kb-article-5tips.html`);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#kb-article-template');
+            
+            if (template) {
+                const content = template.content.cloneNode(true);
+                this.appendChild(content);
+            } else {
+                console.error('Template not found in kb-article-5tips.html');
+            }
+        } catch (error) {
+            console.error('Error loading kb-article content:', error);
+        }
+    }
+
+    connectedCallback() {
+        this.loadContent();
+    }
+}
+
+class KbArticleMaximizingEarnings extends HTMLElement {
+    constructor() {
+        super();
+        console.log('🏗️ KbArticleMaximizingEarnings constructor called');
+    }
+
+    async loadContent() {
+        try {
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/kb-article-maximizingearnings.html`);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#kb-article-template');
+            
+            if (template) {
+                const content = template.content.cloneNode(true);
+                this.appendChild(content);
+            } else {
+                console.error('Template not found in kb-article-maximizingearnings.html');
+            }
+        } catch (error) {
+            console.error('Error loading kb-article content:', error);
+        }
+    }
+
+    connectedCallback() {
+        this.loadContent();
+    }
+}
+
+class KbArticleCollaboration extends HTMLElement {
+    constructor() {
+        super();
+        console.log('🏗️ KbArticleCollaboration constructor called');
+    }
+
+    async loadContent() {
+        try {
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/kb-article-collaboration.html`);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#kb-article-template');
+            
+            if (template) {
+                const content = template.content.cloneNode(true);
+                this.appendChild(content);
+            } else {
+                console.error('Template not found in kb-article-collaboration.html');
+            }
+        } catch (error) {
+            console.error('Error loading kb-article content:', error);
+        }
+    }
+
+    connectedCallback() {
+        this.loadContent();
+    }
+}
+
 // Register custom elements
 console.log('🔧 Registering custom elements...');
 try {
@@ -584,6 +708,10 @@ try {
     customElements.define('footer-part', FooterPart);
     customElements.define('kb-part', KbPart);
     customElements.define('kb-article-part', KbArticlePart);
+    customElements.define('kb-article-1percent', KbArticle1Percent);
+    customElements.define('kb-article-5tips', KbArticle5Tips);
+    customElements.define('kb-article-maximizingearnings', KbArticleMaximizingEarnings);
+    customElements.define('kb-article-collaboration', KbArticleCollaboration);
     console.log('✅ Custom elements registered');
 } catch (error) {
     console.error('❌ Error registering custom elements:', error);
