@@ -8,19 +8,23 @@ class NavbarPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/navbar-part.html');
-            if (!response.ok) throw new Error('Failed to load navbar');
-            const html = await response.text();
-            const template = document.createElement('template');
-            template.innerHTML = html;
-            const content = template.content.querySelector('#navbar-template');
-            if (content) {
-                this.appendChild(content.content.cloneNode(true));
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/navbar-part.html`);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#navbar-template');
+            
+            if (template) {
+                const content = template.content.cloneNode(true);
+                this.appendChild(content);
                 this.initMobileMenu();
                 this.initNavbarScroll();
+            } else {
+                console.error('Template not found in navbar-part.html');
             }
         } catch (error) {
-            console.error('Error loading navbar:', error);
+            console.error('Error loading navbar content:', error);
         }
     }
 
@@ -79,7 +83,8 @@ class HeroPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/hero-part.html');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/hero-part.html`);
             if (!response.ok) throw new Error('Failed to load hero');
             const html = await response.text();
             const template = document.createElement('template');
@@ -114,7 +119,8 @@ class CarouselPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/carousel-part.html');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/carousel-part.html`);
             if (!response.ok) throw new Error('Failed to load carousel');
             const html = await response.text();
             const template = document.createElement('template');
@@ -136,7 +142,8 @@ class CarouselPart extends HTMLElement {
     async initializeCarousel() {
         try {
             // Load and shuffle images
-            const response = await fetch('./js/carousel-data.json');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/js/carousel-data.json`);
             if (!response.ok) throw new Error('Failed to load carousel data');
             const data = await response.json();
             const shuffledImages = this.shuffleArray([...data.images]);
@@ -330,7 +337,8 @@ class WhyChooseUsPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/whychooseus-part.html');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/whychooseus-part.html`);
             if (!response.ok) throw new Error('Failed to load why choose us');
             const html = await response.text();
             const template = document.createElement('template');
@@ -357,7 +365,8 @@ class ReviewsPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/reviews-part.html');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/reviews-part.html`);
             if (!response.ok) throw new Error('Failed to load reviews');
             const html = await response.text();
             const template = document.createElement('template');
@@ -384,7 +393,8 @@ class AboutPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/about-part.html');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/about-part.html`);
             if (!response.ok) throw new Error('Failed to load about');
             const html = await response.text();
             const template = document.createElement('template');
@@ -411,7 +421,8 @@ class ServicesPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/services-part.html');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/services-part.html`);
             if (!response.ok) throw new Error('Failed to load services section');
             const html = await response.text();
             const template = document.createElement('template');
@@ -438,17 +449,21 @@ class FooterPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/footer-part.html');
-            if (!response.ok) throw new Error('Failed to load footer');
-            const html = await response.text();
-            const template = document.createElement('template');
-            template.innerHTML = html;
-            const content = template.content.querySelector('#footer-template');
-            if (content) {
-                this.appendChild(content.content.cloneNode(true));
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/footer-part.html`);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#footer-template');
+            
+            if (template) {
+                const content = template.content.cloneNode(true);
+                this.appendChild(content);
+            } else {
+                console.error('Template not found in footer-part.html');
             }
         } catch (error) {
-            console.error('Error loading footer:', error);
+            console.error('Error loading footer content:', error);
         }
     }
 
@@ -465,7 +480,8 @@ class KbPart extends HTMLElement {
 
     async loadContent() {
         try {
-            const response = await fetch('./components/kb-part.html');
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/kb-part.html`);
             if (!response.ok) throw new Error('Failed to load knowledge base');
             const html = await response.text();
             const template = document.createElement('template');
@@ -524,6 +540,37 @@ class KbPart extends HTMLElement {
     }
 }
 
+class KbArticlePart extends HTMLElement {
+    constructor() {
+        super();
+        console.log('🏗️ KbArticlePart constructor called');
+    }
+
+    async loadContent() {
+        try {
+            const baseUrl = this.getAttribute('data-base-url') || '';
+            const response = await fetch(`${baseUrl}/components/kb-article-part.html`);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const template = doc.querySelector('#kb-article-template');
+            
+            if (template) {
+                const content = template.content.cloneNode(true);
+                this.appendChild(content);
+            } else {
+                console.error('Template not found in kb-article-part.html');
+            }
+        } catch (error) {
+            console.error('Error loading kb-article content:', error);
+        }
+    }
+
+    connectedCallback() {
+        this.loadContent();
+    }
+}
+
 // Register custom elements
 console.log('🔧 Registering custom elements...');
 try {
@@ -536,6 +583,7 @@ try {
     customElements.define('services-part', ServicesPart);
     customElements.define('footer-part', FooterPart);
     customElements.define('kb-part', KbPart);
+    customElements.define('kb-article-part', KbArticlePart);
     console.log('✅ Custom elements registered');
 } catch (error) {
     console.error('❌ Error registering custom elements:', error);
