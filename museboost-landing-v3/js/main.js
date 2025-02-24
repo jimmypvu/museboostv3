@@ -457,27 +457,88 @@ class FooterPart extends HTMLElement {
     }
 }
 
+class KbPart extends HTMLElement {
+    constructor() {
+        super();
+        console.log('🏗️ KbPart constructor called');
+    }
+
+    async loadContent() {
+        try {
+            const response = await fetch('./components/kb-part.html');
+            if (!response.ok) throw new Error('Failed to load knowledge base');
+            const html = await response.text();
+            const template = document.createElement('template');
+            template.innerHTML = html;
+            const content = template.content.querySelector('#kb-template');
+            if (content) {
+                this.appendChild(content.content.cloneNode(true));
+                this.initSearch();
+            }
+        } catch (error) {
+            console.error('Error loading knowledge base:', error);
+        }
+    }
+
+    connectedCallback() {
+        this.loadContent();
+    }
+
+    initSearch() {
+        const searchInput = this.querySelector('#kb-search');
+        const searchResults = this.querySelector('#search-results');
+        const articles = this.querySelectorAll('.kb-article');
+        
+        if (searchInput && searchResults) {
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                if (searchTerm.length > 0) {
+                    const matches = Array.from(articles).filter(article => {
+                        const title = article.querySelector('h2').textContent.toLowerCase();
+                        const description = article.querySelector('p').textContent.toLowerCase();
+                        return title.includes(searchTerm) || description.includes(searchTerm);
+                    });
+
+                    if (matches.length > 0) {
+                        searchResults.innerHTML = matches.map(article => `
+                            <div class="kb-search-result p-4 border-b border-gray-700 last:border-0">
+                                <h3 class="text-lg font-semibold">${article.querySelector('h2 a').textContent}</h3>
+                                <p class="text-gray-400">${article.querySelector('p').textContent}</p>
+                                <a href="${article.querySelector('h2 a').getAttribute('href')}" 
+                                   class="text-blue-500 hover:text-blue-400 text-sm mt-2 inline-block">
+                                   Read more →
+                                </a>
+                            </div>
+                        `).join('');
+                    } else {
+                        searchResults.innerHTML = `<p class="text-gray-400 p-4">No results found for "${searchTerm}"</p>`;
+                    }
+                    searchResults.style.display = 'block';
+                } else {
+                    searchResults.innerHTML = '';
+                    searchResults.style.display = 'none';
+                }
+            });
+        }
+    }
+}
+
 // Register custom elements
 console.log('🔧 Registering custom elements...');
 try {
     customElements.define('navbar-part', NavbarPart);
-    console.log('✅ NavbarPart registered');
     customElements.define('hero-part', HeroPart);
-    console.log('✅ HeroPart registered');
     customElements.define('carousel-part', CarouselPart);
-    console.log('✅ CarouselPart registered');
     customElements.define('whychooseus-part', WhyChooseUsPart);
-    console.log('✅ WhyChooseUsPart registered');
     customElements.define('reviews-part', ReviewsPart);
-    console.log('✅ ReviewsPart registered');
     customElements.define('about-part', AboutPart);
-    console.log('✅ AboutPart registered');
     customElements.define('services-part', ServicesPart);
-    console.log('✅ ServicesPart registered');
     customElements.define('footer-part', FooterPart);
-    console.log('✅ FooterPart registered');
+    customElements.define('kb-part', KbPart);
+    console.log('✅ Custom elements registered');
 } catch (error) {
-    console.error('❌ Error registering components:', error);
+    console.error('❌ Error registering custom elements:', error);
 }
 
 console.log('🏁 Components main.js finished loading');
