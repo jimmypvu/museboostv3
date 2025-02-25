@@ -4,7 +4,8 @@ module.exports = {
     "./index.html",
     "./components/**/*.{html,js}",
     "./script.js",
-    "./styles/**/*.css"
+    "./styles/**/*.css",
+    "./articles/**/*.html"
   ],
   theme: {
     extend: {
@@ -15,7 +16,10 @@ module.exports = {
       colors: {
         'museboost-primary': '#FF4D8D',
         'museboost-secondary': '#8C54FF',
-        'museboost-accent': '#22D3EE'
+        'museboost-accent': '#22D3EE',
+        'dark-bg': '#0a0a0a',
+        'darker-bg': '#050505',
+        'cream-white': '#FAF9F6'
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
